@@ -12,7 +12,7 @@ form?.addEventListener("submit", (event) => {
   const email     = data.get("email") || "";
   const gbp       = data.get("gbp") || "";
 
-  const subject = encodeURIComponent(`Free Revenue Leak Scan request — ${business}`);
+  const subject = encodeURIComponent(`Free Revenue Leak Scan request - ${business}`);
   const body = encodeURIComponent(
     [
       "New Revenue Leak Score free scan request:",
@@ -27,6 +27,6 @@ form?.addEventListener("submit", (event) => {
     ].join("\n")
   );
 
-  message.textContent = "Opening your email app — your scan request is ready to send.";
+  message.textContent = "Opening your email app - your scan request is ready to send.";
   window.location.href = `mailto:kennethanthonymeyers@yahoo.com?subject=${subject}&body=${body}`;
 });

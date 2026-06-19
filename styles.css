@@ -89,7 +89,8 @@ h3 { font-size: 17px; font-weight: 700; letter-spacing: -.01em; }
   border: 1px solid var(--line-2);
   font-size: 15px;
   font-weight: 700;
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
   text-decoration: none;
   cursor: pointer;
   transition: all .18s ease;
@@ -183,6 +184,7 @@ nav a:hover { color: var(--text); }
   pointer-events: none;
 }
 .hero-copy h1 { margin-bottom: 18px; max-width: 660px; }
+.hero-copy, .hero-panels, .form-copy, .form-card { min-width: 0; }
 
 .trust-chips {
   display: flex;
@@ -783,7 +785,6 @@ input::placeholder { color: var(--muted-2); }
   .hero { padding: 48px 20px 40px; }
   .hero::before { display: none; }
   .hero-copy h1 { font-size: 26px; }
-  .hero-panels { order: -1; }
 
   .step-grid, .price-grid, .compare-grid, .faq-grid { grid-template-columns: 1fr; }
 
