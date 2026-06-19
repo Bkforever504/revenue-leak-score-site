@@ -1,5 +1,7 @@
 /* Revenue Leak Score — site interactions */
 
+document.documentElement.classList.add('js');
+
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ---- Hero panel animation ---- */
@@ -63,6 +65,10 @@ function initForm() {
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
     const d = new FormData(form);
     const business = d.get('business') || '';
     const name     = d.get('name')     || '';
