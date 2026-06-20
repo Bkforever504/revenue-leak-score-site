@@ -116,15 +116,20 @@ function initForm() {
         if (!el.closest?.('.form-success')) el.disabled = true;
       });
       if (message) message.textContent = '';
+      if (submit) submit.textContent = 'Request Sent';
       if (success) success.hidden = false;
     } catch (err) {
+      let copied = false;
       if (navigator.clipboard?.writeText) {
-        try { await navigator.clipboard.writeText(fallbackText); } catch (_) {}
+        try {
+          await navigator.clipboard.writeText(fallbackText);
+          copied = true;
+        } catch (_) {}
       }
       const subject = encodeURIComponent(`Free Revenue Leak Scan request - ${business}`);
       const body = encodeURIComponent(fallbackText);
       if (message) {
-        message.innerHTML = 'Form service needs activation. Your request details were copied. <a href="mailto:kennethanthonymeyers@yahoo.com?subject=' + subject + '&body=' + body + '">Send by email instead</a>.';
+        message.innerHTML = 'The form could not send. ' + (copied ? 'Your request details were copied. ' : '') + '<a href="mailto:kennethanthonymeyers@yahoo.com?subject=' + subject + '&body=' + body + '">Send by email instead</a>.';
       }
       if (submit) {
         submit.disabled = false;

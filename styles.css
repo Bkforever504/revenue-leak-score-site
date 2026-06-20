@@ -615,6 +615,7 @@ html.js .ai-result.anim-in { opacity: 1; }
 .price-feats li { display: flex; gap: 8px; font-size: 13px; color: var(--muted); }
 .price-feats li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; }
 .price-featured .price-feats li { color: var(--text); }
+.price-direct { width: 100%; justify-content: center; margin-top: 10px; }
 .price-guar { margin-top: 12px; font-size: 11px; color: var(--muted-2); padding-top: 12px; border-top: 1px solid rgba(255,255,255,.07); line-height: 1.55; }
 
 /* ==============================================
