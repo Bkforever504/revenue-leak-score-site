@@ -109,6 +109,8 @@ function initForm() {
         headers: { 'Accept': 'application/json' }
       });
       if (!res.ok) throw new Error(`Form endpoint returned ${res.status}`);
+      const data = await res.json().catch(() => ({}));
+      if (data.success !== 'true' && data.success !== true) throw new Error(data.message || 'Submission failed');
       form.classList.add('is-submitted');
       Array.from(form.elements).forEach(el => {
         if (!el.closest?.('.form-success')) el.disabled = true;
