@@ -83,6 +83,8 @@ function initForm() {
 
     d.set('_subject', `Free Revenue Leak Scan request - ${business}`);
     d.set('_replyto', email);
+    d.set('subject', `Free Revenue Leak Scan request - ${business}`);
+    d.set('reply_to', email);
 
     const fallbackText = [
       'New Revenue Leak Score free scan request:',
@@ -103,14 +105,21 @@ function initForm() {
     }
 
     try {
-      const res = await fetch(form.action, {
+      const endpoint = form.action || '';
+      const isFormSubmit = endpoint.includes('formsubmit.co');
+      const isMissingFormspreeId = endpoint.includes('formspree.io/f/REPLACE_WITH_FORM_ID');
+      if (isMissingFormspreeId) throw new Error('Formspree endpoint is not configured');
+
+      const res = await fetch(endpoint, {
         method: 'POST',
         body: d,
         headers: { 'Accept': 'application/json' }
       });
       if (!res.ok) throw new Error(`Form endpoint returned ${res.status}`);
       const data = await res.json().catch(() => ({}));
-      if (data.success !== 'true' && data.success !== true) throw new Error(data.message || 'Submission failed');
+      if (isFormSubmit && data.success !== 'true' && data.success !== true) {
+        throw new Error(data.message || 'Submission failed');
+      }
       form.classList.add('is-submitted');
       Array.from(form.elements).forEach(el => {
         if (!el.closest?.('.form-success')) el.disabled = true;
