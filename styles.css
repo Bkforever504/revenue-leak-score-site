@@ -443,6 +443,52 @@ html.js .ai-result.anim-in { opacity: 1; }
 .sep { color: var(--line-2) !important; padding: 0 !important; }
 
 /* ==============================================
+   TRADE BADGES
+   ============================================== */
+.trade-badges {
+  padding: 24px clamp(20px,5vw,80px);
+  background: rgba(255,255,255,.78);
+  border-bottom: 1px solid rgba(20,32,29,.08);
+}
+.trade-badges p {
+  margin: 0 0 12px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+}
+.badge-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.badge-row span {
+  min-width: 138px;
+  padding: 10px 14px;
+  border: 1px solid rgba(13,157,99,.16);
+  border-radius: var(--r);
+  background: linear-gradient(155deg, #fff, #f6fbf8);
+  box-shadow: 0 8px 22px rgba(31,64,50,.06);
+}
+.badge-row strong,
+.badge-row small {
+  display: block;
+  text-align: center;
+}
+.badge-row strong {
+  font-size: 13px;
+  color: var(--text);
+}
+.badge-row small {
+  margin-top: 2px;
+  font-size: 10px;
+  color: var(--muted);
+}
+
+/* ==============================================
    PROOF BAR
    ============================================== */
 .proof-bar {
@@ -1032,6 +1078,59 @@ input::placeholder { color: var(--muted-2); }
 .submit-btn:hover { box-shadow: 0 6px 28px rgba(63,212,138,.35); }
 .form-note { font-size: 11px; color: var(--muted-2); text-align: center; margin: 0; }
 .form-msg  { font-size: 13px; color: var(--green); min-height: 20px; text-align: center; margin: 0; }
+.form-msg a { color: var(--green); font-weight: 800; text-decoration: underline; }
+.submit-btn:disabled {
+  opacity: .72;
+  cursor: wait;
+  transform: none;
+}
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+.form-success {
+  margin-top: 10px;
+  padding: 18px;
+  border: 1px solid rgba(13,157,99,.22);
+  border-radius: var(--r);
+  background: rgba(13,157,99,.07);
+  text-align: left;
+}
+.success-mark {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--green);
+  color: #fff;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+.form-success strong {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+.form-success p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.65;
+  margin: 0 0 10px;
+}
+.form-success a {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--green);
+  text-decoration: underline;
+}
+form.is-submitted > :not(.form-success) {
+  display: none;
+}
 
 /* ==============================================
    FOOTER
@@ -1394,6 +1493,62 @@ html.js .ai-scan-line {
 }
 .trade-card:hover::after,
 .check-card:hover::after { transform: translateX(130%); }
+
+/* ==============================================
+   PRODUCT MOTION POLISH
+   ============================================== */
+@media (min-width: 901px) {
+  html.js .audit-panel {
+    animation: panel-float 7s ease-in-out infinite;
+  }
+  html.js .ai-panel {
+    animation: panel-float 7s ease-in-out infinite;
+    animation-delay: 1.4s;
+  }
+}
+@keyframes panel-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.check-icon svg {
+  transform-origin: center;
+}
+.check-card:hover .ico-cyan svg {
+  animation: icon-scan .75s ease;
+}
+.check-card:hover .ico-red svg {
+  animation: phone-ring .45s ease;
+}
+.check-card:hover .ico-green svg {
+  animation: mail-lift .55s ease;
+}
+.check-card:hover .ico-amber svg {
+  animation: star-pop .55s ease;
+}
+.check-card:hover .ico-purple svg {
+  animation: doc-mark .6s ease;
+}
+@keyframes icon-scan {
+  0%, 100% { transform: translateX(0); }
+  45% { transform: translateX(3px); }
+}
+@keyframes phone-ring {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+}
+@keyframes mail-lift {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+@keyframes star-pop {
+  0%, 100% { transform: scale(1); }
+  45% { transform: scale(1.14); }
+}
+@keyframes doc-mark {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-2px) rotate(-2deg); }
+}
 
 /* ==============================================
    FOUNDER SECTION

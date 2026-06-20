@@ -17,7 +17,35 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260620b">
+  <link rel="stylesheet" href="styles.css?v=20260620c">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Revenue Leak Score Audit",
+    "description": "Free public-data revenue leak scan for HVAC, plumbing, roofing, electrical, and home service businesses.",
+    "provider": {
+      "@type": "Person",
+      "name": "Kenny Meyers"
+    },
+    "areaServed": "United States",
+    "serviceType": "Revenue leak audit for local service businesses",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Free Revenue Leak Scan",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Full Revenue Leak Audit",
+        "price": "299",
+        "priceCurrency": "USD"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -131,6 +159,18 @@
             <div class="ai-result ai-miss"><span class="ai-x" aria-hidden="true">✗</span><span>Dallas HVAC Co. — not found</span></div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ============ TRADE BADGES ============ -->
+    <section class="trade-badges" aria-label="Trades served">
+      <p>Serving businesses in these trades</p>
+      <div class="badge-row">
+        <span><strong>HVAC</strong><small>ACCA-aware checks</small></span>
+        <span><strong>Plumbing</strong><small>PHCC-aware checks</small></span>
+        <span><strong>Roofing</strong><small>NRCA-aware checks</small></span>
+        <span><strong>Electrical</strong><small>NECA-aware checks</small></span>
+        <span><strong>Contractors</strong><small>NAHB-aware checks</small></span>
       </div>
     </section>
 
@@ -745,7 +785,7 @@
           <h2 id="founder-heading">A real person reviews every scan before it reaches you.</h2>
           <p class="sublede">Every Revenue Leak Score is built and reviewed by Kenny Meyers — not outsourced, not auto-generated. If a signal can't be confirmed from public data, it doesn't go in the report.</p>
           <ul class="founder-points">
-            <li><span class="fp-dot" aria-hidden="true"></span><span>60+ HVAC, plumbing, and service business web presences manually audited</span></li>
+            <li><span class="fp-dot" aria-hidden="true"></span><span>Manual reviews built around HVAC, plumbing, roofing, and local-service buying behavior</span></li>
             <li><span class="fp-dot" aria-hidden="true"></span><span>Every report passes QA before sending — no bulk auto-generation, ever</span></li>
             <li><span class="fp-dot" aria-hidden="true"></span><span>Built because most "free audits" are retainer pitch funnels — this one isn't</span></li>
             <li><span class="fp-dot" aria-hidden="true"></span><span>Reply to your scan email and it goes directly to Kenny — no support queue</span></li>
@@ -819,20 +859,24 @@
           <li><span aria-hidden="true">✓</span>No sales call — email only</li>
           <li><span aria-hidden="true">✓</span>The free scan is yours to keep regardless</li>
         </ul>
-        <div class="score-curiosity reveal" aria-label="Industry average score context">
+        <div class="score-curiosity reveal" aria-label="Example score context">
           <div class="sc-num">51<small>/100</small></div>
           <div class="sc-info">
-            <strong>Average score for HVAC &amp; service businesses</strong>
-            <span>Most businesses have 3–4 active leak points. Where do you rank?</span>
+            <strong>Example benchmark score</strong>
+            <span>Many scans surface 3–4 fixable leak points. Where would yours land?</span>
           </div>
         </div>
         <div class="activity-badge reveal">
           <span class="activity-dot" aria-hidden="true"></span>
-          <span>18 businesses audited this month</span>
+          <span>Manual review queue open this week</span>
         </div>
       </div>
       <div class="form-card reveal">
-        <form id="scan-form">
+        <form id="scan-form" action="https://formsubmit.co/ajax/kennethanthonymeyers@yahoo.com" method="POST">
+          <input type="hidden" name="_subject" value="New Revenue Leak Score free scan request">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_url" value="https://revenue-leak-score.onrender.com">
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hp-field" aria-hidden="true">
           <div class="form-row">
             <label for="f-business">Business name <input id="f-business" name="business" required placeholder="Dallas HVAC Co."></label>
             <label for="f-name">Your name <input id="f-name" name="name" required placeholder="John"></label>
@@ -859,6 +903,12 @@
           <button class="button primary submit-btn" type="submit">Send Me My Free Revenue Leak Score →</button>
           <p class="form-note">No credit card. No phone number. No sales call.</p>
           <p id="form-message" class="form-msg" role="status" aria-live="polite"></p>
+          <div id="form-success" class="form-success" hidden>
+            <span class="success-mark" aria-hidden="true">✓</span>
+            <strong>Your scan request is in.</strong>
+            <p>Check your inbox for a FormSubmit confirmation email if this is the first submission. Your Revenue Leak Score is reviewed manually and targeted for delivery within 24 hours.</p>
+            <a href="mailto:kennethanthonymeyers@yahoo.com">Email Kenny directly</a>
+          </div>
         </form>
       </div>
     </section>
@@ -886,6 +936,6 @@
     <a class="button primary" href="#scan">Get My Free Revenue Leak Score →</a>
   </div>
 
-  <script src="script.js?v=20260620b"></script>
+  <script src="script.js?v=20260620c"></script>
 </body>
 </html>

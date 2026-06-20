@@ -61,15 +61,18 @@ function initReveal() {
 function initForm() {
   const form = document.querySelector('#scan-form');
   const message = document.querySelector('#form-message');
+  const success = document.querySelector('#form-success');
+  const submit = form?.querySelector('.submit-btn');
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (!form.checkValidity()) {
       form.reportValidity();
       return;
     }
     const d = new FormData(form);
+    if (d.get('_honey')) return;
     const business = d.get('business') || '';
     const name     = d.get('name')     || '';
     const url      = d.get('url')      || '';
@@ -78,8 +81,10 @@ function initForm() {
     const email    = d.get('email')    || '';
     const gbp      = d.get('gbp')      || '';
 
-    const subject = encodeURIComponent(`Free Revenue Leak Scan request — ${business}`);
-    const body = encodeURIComponent([
+    d.set('_subject', `Free Revenue Leak Scan request - ${business}`);
+    d.set('_replyto', email);
+
+    const fallbackText = [
       'New Revenue Leak Score free scan request:',
       '',
       `Business:  ${business}`,
@@ -89,10 +94,55 @@ function initForm() {
       `Category:  ${category}`,
       `Email:     ${email}`,
       `GBP URL:   ${gbp || 'Not provided'}`,
-    ].join('\n'));
+    ].join('\n');
 
-    if (message) message.textContent = 'Opening your email app — scan request is ready to send.';
-    window.location.href = `mailto:kennethanthonymeyers@yahoo.com?subject=${subject}&body=${body}`;
+    if (message) message.textContent = 'Sending your scan request...';
+    if (submit) {
+      submit.disabled = true;
+      submit.textContent = 'Sending...';
+    }
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: d,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (!res.ok) throw new Error(`Form endpoint returned ${res.status}`);
+      form.classList.add('is-submitted');
+      Array.from(form.elements).forEach(el => {
+        if (!el.closest?.('.form-success')) el.disabled = true;
+      });
+      if (message) message.textContent = '';
+      if (success) success.hidden = false;
+    } catch (err) {
+      if (navigator.clipboard?.writeText) {
+        try { await navigator.clipboard.writeText(fallbackText); } catch (_) {}
+      }
+      const subject = encodeURIComponent(`Free Revenue Leak Scan request - ${business}`);
+      const body = encodeURIComponent(fallbackText);
+      if (message) {
+        message.innerHTML = 'Form service needs activation. Your request details were copied. <a href="mailto:kennethanthonymeyers@yahoo.com?subject=' + subject + '&body=' + body + '">Send by email instead</a>.';
+      }
+      if (submit) {
+        submit.disabled = false;
+        submit.textContent = 'Try Sending Again';
+      }
+    }
+  });
+}
+
+/* ---- CTA focus assist ---- */
+function initScanFocus() {
+  document.querySelectorAll('a[href="#scan"]').forEach(link => {
+    link.addEventListener('click', () => {
+      setTimeout(() => {
+        const field = document.querySelector('#f-business');
+        if (field && window.matchMedia('(max-width: 900px)').matches) {
+          field.focus({ preventScroll: true });
+        }
+      }, 650);
+    });
   });
 }
 
@@ -169,7 +219,7 @@ function initStickyCTA() {
 
 /* ---- Init ---- */
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => { initHero(); initReveal(); initForm(); initNav(); initStickyCTA(); initCountUp(); });
+  document.addEventListener('DOMContentLoaded', () => { initHero(); initReveal(); initForm(); initNav(); initStickyCTA(); initCountUp(); initScanFocus(); });
 } else {
-  initHero(); initReveal(); initForm(); initNav(); initStickyCTA(); initCountUp();
+  initHero(); initReveal(); initForm(); initNav(); initStickyCTA(); initCountUp(); initScanFocus();
 }
