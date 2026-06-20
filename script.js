@@ -96,6 +96,39 @@ function initForm() {
   });
 }
 
+/* ---- Proof bar count-up ---- */
+function initCountUp() {
+  if (prefersReducedMotion) return;
+  const items = document.querySelectorAll('.proof-item strong');
+  const mapped = Array.from(items).map(el => {
+    const raw = el.textContent.trim();
+    const digits = raw.match(/\d+/);
+    if (!digits) return { el, num: null };
+    const num = parseInt(digits[0]);
+    const pre = raw.slice(0, raw.indexOf(digits[0]));
+    const suf = raw.slice(raw.indexOf(digits[0]) + digits[0].length);
+    return { el, num, pre, suf, orig: raw };
+  });
+  const obs = new IntersectionObserver(entries => {
+    if (!entries[0].isIntersecting) return;
+    obs.disconnect();
+    mapped.forEach(({ el, num, pre, suf, orig }) => {
+      if (!num) return;
+      const steps = 28;
+      const delay = 32;
+      let cur = 0;
+      const inc = num / steps;
+      const t = setInterval(() => {
+        cur = Math.min(cur + inc, num);
+        el.textContent = pre + Math.round(cur) + suf;
+        if (cur >= num) { el.textContent = orig; clearInterval(t); }
+      }, delay);
+    });
+  }, { threshold: 0.7 });
+  const bar = document.querySelector('.proof-bar');
+  if (bar) obs.observe(bar);
+}
+
 /* ---- Mobile nav toggle ---- */
 function initNav() {
   const toggle = document.querySelector('#nav-toggle');
@@ -136,7 +169,7 @@ function initStickyCTA() {
 
 /* ---- Init ---- */
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => { initHero(); initReveal(); initForm(); initNav(); initStickyCTA(); });
+  document.addEventListener('DOMContentLoaded', () => { initHero(); initReveal(); initForm(); initNav(); initStickyCTA(); initCountUp(); });
 } else {
-  initHero(); initReveal(); initForm(); initNav(); initStickyCTA();
+  initHero(); initReveal(); initForm(); initNav(); initStickyCTA(); initCountUp();
 }

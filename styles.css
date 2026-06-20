@@ -1347,3 +1347,185 @@ nav a:not(.nav-cta) { color: #3c4a44; }
   .trades-grid { grid-template-columns: 1fr; }
   .compare-grid { grid-template-columns: 1fr; }
 }
+
+/* ==============================================
+   AI SCAN LINE ANIMATION
+   ============================================== */
+.ai-panel { position: relative; }
+.ai-scan-line {
+  position: absolute;
+  left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 8%, var(--cyan) 50%, transparent 92%);
+  top: 40px;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+}
+html.js .ai-scan-line {
+  animation: ai-scan 1.6s ease-in-out forwards;
+  animation-delay: 0.9s;
+}
+@keyframes ai-scan {
+  0%   { top: 40px;  opacity: 0; }
+  8%   { opacity: .75; }
+  88%  { opacity: .55; }
+  100% { top: 96%;   opacity: 0; }
+}
+
+/* ==============================================
+   CARD HOVER SHINE
+   ============================================== */
+.trade-card,
+.check-card {
+  position: relative;
+  overflow: hidden;
+}
+.trade-card::after,
+.check-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(108deg, transparent 32%, rgba(255,255,255,.07) 50%, transparent 68%);
+  transform: translateX(-130%);
+  transition: transform .55s ease;
+  pointer-events: none;
+  border-radius: inherit;
+}
+.trade-card:hover::after,
+.check-card:hover::after { transform: translateX(130%); }
+
+/* ==============================================
+   FOUNDER SECTION
+   ============================================== */
+.founder-section { background: var(--panel); }
+.founder-wrap {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(28px, 5vw, 72px);
+  align-items: start;
+  max-width: 880px;
+}
+.founder-avatar {
+  width: 88px; height: 88px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(13,157,99,.12), rgba(22,137,184,.1));
+  border: 2px solid rgba(13,157,99,.28);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px; font-weight: 900;
+  color: var(--green);
+  letter-spacing: -.02em;
+  flex-shrink: 0;
+  box-shadow: 0 8px 28px rgba(13,157,99,.13), 0 0 0 6px rgba(13,157,99,.05);
+}
+.founder-copy h2 { margin-bottom: 16px; }
+.founder-copy .sublede { margin-bottom: 24px; }
+.founder-points {
+  display: flex; flex-direction: column; gap: 12px;
+}
+.founder-points li {
+  display: flex; gap: 10px; align-items: flex-start;
+  font-size: 14px; color: var(--muted); line-height: 1.65;
+}
+.fp-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  flex-shrink: 0;
+  margin-top: 7px;
+}
+
+/* ==============================================
+   GUARANTEE SEAL
+   ============================================== */
+.guar-inner { align-items: center; }
+.guar-seal {
+  flex-shrink: 0;
+  width: 80px; height: 80px;
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+  margin-left: auto;
+}
+.gs-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px dashed rgba(13,157,99,.38);
+  animation: seal-spin 22s linear infinite;
+}
+@keyframes seal-spin { to { transform: rotate(360deg); } }
+.guar-seal-inner {
+  position: relative;
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  background: rgba(13,157,99,.07);
+  border-radius: 50%;
+  width: 64px; height: 64px;
+  justify-content: center;
+}
+.guar-seal-inner span {
+  font-size: 7.5px; font-weight: 900;
+  letter-spacing: .14em;
+  color: var(--green);
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+/* ==============================================
+   SCORE CURIOSITY WIDGET
+   ============================================== */
+.score-curiosity {
+  display: flex; align-items: center; gap: 16px;
+  margin-top: 24px;
+  padding: 15px 18px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  box-shadow: 0 4px 16px rgba(31,64,50,.07);
+}
+.sc-num {
+  font-size: 38px; font-weight: 900;
+  color: var(--amber);
+  letter-spacing: -.04em;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.sc-num small { font-size: 14px; color: var(--muted); font-weight: 600; }
+.sc-info { display: flex; flex-direction: column; gap: 3px; }
+.sc-info strong { font-size: 13px; font-weight: 700; color: var(--text); }
+.sc-info span { font-size: 12px; color: var(--muted); }
+
+/* ==============================================
+   ACTIVITY BADGE
+   ============================================== */
+.activity-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; color: var(--muted);
+  background: rgba(13,157,99,.06);
+  border: 1px solid rgba(13,157,99,.18);
+  border-radius: 999px;
+  padding: 5px 13px;
+  margin-top: 14px;
+}
+.activity-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  flex-shrink: 0;
+  animation: act-pulse 2.4s ease-in-out infinite;
+}
+@keyframes act-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(13,157,99,.4); }
+  50%       { box-shadow: 0 0 0 4px rgba(13,157,99,.08); }
+}
+
+/* ==============================================
+   RESPONSIVE ADDITIONS
+   ============================================== */
+@media (max-width: 900px) {
+  .founder-wrap { grid-template-columns: 1fr; }
+  .guar-seal { display: none; }
+}
+@media (max-width: 600px) {
+  .founder-avatar { width: 68px; height: 68px; font-size: 20px; }
+  .score-curiosity { flex-direction: column; align-items: flex-start; gap: 10px; }
+}

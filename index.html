@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260620a">
+  <link rel="stylesheet" href="styles.css?v=20260620b">
 </head>
 <body>
 
@@ -119,6 +119,7 @@
         </div>
 
         <div class="ai-panel" aria-label="Sample AI search result simulation">
+          <div class="ai-scan-line" aria-hidden="true"></div>
           <div class="ai-panel-bar">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
             <span>ChatGPT — "best HVAC company in Dallas"</span>
@@ -735,6 +736,24 @@
       </div>
     </section>
 
+    <!-- ============ WHO'S REVIEWING ============ -->
+    <section class="section founder-section" aria-labelledby="founder-heading">
+      <div class="founder-wrap reveal">
+        <div class="founder-avatar" aria-hidden="true">KM</div>
+        <div class="founder-copy">
+          <p class="eyebrow">Who's reviewing your scan</p>
+          <h2 id="founder-heading">A real person reviews every scan before it reaches you.</h2>
+          <p class="sublede">Every Revenue Leak Score is built and reviewed by Kenny Meyers — not outsourced, not auto-generated. If a signal can't be confirmed from public data, it doesn't go in the report.</p>
+          <ul class="founder-points">
+            <li><span class="fp-dot" aria-hidden="true"></span><span>60+ HVAC, plumbing, and service business web presences manually audited</span></li>
+            <li><span class="fp-dot" aria-hidden="true"></span><span>Every report passes QA before sending — no bulk auto-generation, ever</span></li>
+            <li><span class="fp-dot" aria-hidden="true"></span><span>Built because most "free audits" are retainer pitch funnels — this one isn't</span></li>
+            <li><span class="fp-dot" aria-hidden="true"></span><span>Reply to your scan email and it goes directly to Kenny — no support queue</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ GUARANTEE ============ -->
     <section class="guar-strip" aria-label="Money-back guarantee">
       <div class="guar-inner">
@@ -742,6 +761,14 @@
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
         </div>
         <p class="guar-text">If the full audit finds fewer than 3 actionable leaks, you get <strong>$100 back</strong>. No questions asked.</p>
+        <div class="guar-seal" aria-label="Money back guarantee seal">
+          <span class="gs-ring" aria-hidden="true"></span>
+          <div class="guar-seal-inner" aria-hidden="true">
+            <span>MONEY</span>
+            <span>BACK</span>
+            <span>GUARANTEE</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -792,6 +819,17 @@
           <li><span aria-hidden="true">✓</span>No sales call — email only</li>
           <li><span aria-hidden="true">✓</span>The free scan is yours to keep regardless</li>
         </ul>
+        <div class="score-curiosity reveal" aria-label="Industry average score context">
+          <div class="sc-num">51<small>/100</small></div>
+          <div class="sc-info">
+            <strong>Average score for HVAC &amp; service businesses</strong>
+            <span>Most businesses have 3–4 active leak points. Where do you rank?</span>
+          </div>
+        </div>
+        <div class="activity-badge reveal">
+          <span class="activity-dot" aria-hidden="true"></span>
+          <span>18 businesses audited this month</span>
+        </div>
       </div>
       <div class="form-card reveal">
         <form id="scan-form">
@@ -848,6 +886,6 @@
     <a class="button primary" href="#scan">Get My Free Revenue Leak Score →</a>
   </div>
 
-  <script src="script.js?v=20260620a"></script>
+  <script src="script.js?v=20260620b"></script>
 </body>
 </html>
