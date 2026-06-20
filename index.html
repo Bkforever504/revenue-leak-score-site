@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260620c">
+  <link rel="stylesheet" href="styles.css?v=20260620d">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -162,30 +162,7 @@
       </div>
     </section>
 
-    <!-- ============ TRADE BADGES ============ -->
-    <section class="trade-badges" aria-label="Trades served">
-      <p>Serving businesses in these trades</p>
-      <div class="badge-row">
-        <span><strong>HVAC</strong><small>ACCA-aware checks</small></span>
-        <span><strong>Plumbing</strong><small>PHCC-aware checks</small></span>
-        <span><strong>Roofing</strong><small>NRCA-aware checks</small></span>
-        <span><strong>Electrical</strong><small>NECA-aware checks</small></span>
-        <span><strong>Contractors</strong><small>NAHB-aware checks</small></span>
-      </div>
-    </section>
-
-    <!-- ============ INDUSTRY STRIP ============ -->
-    <div class="industry-strip" aria-label="Industries served">
-      <span>HVAC</span><span class="sep" aria-hidden="true">·</span>
-      <span>Plumbing</span><span class="sep" aria-hidden="true">·</span>
-      <span>Roofing</span><span class="sep" aria-hidden="true">·</span>
-      <span>Electrical</span><span class="sep" aria-hidden="true">·</span>
-      <span>Dental</span><span class="sep" aria-hidden="true">·</span>
-      <span>Med Spas</span><span class="sep" aria-hidden="true">·</span>
-      <span>Contractors</span>
-    </div>
-
-    <!-- ============ PROOF BAR ============ -->
+    <!-- ============ PROOF + TRADES ============ -->
     <div class="proof-bar reveal">
       <div class="proof-item"><strong>7</strong><span>public signals checked</span></div>
       <div class="proof-div" aria-hidden="true"></div>
@@ -193,157 +170,47 @@
       <div class="proof-div" aria-hidden="true"></div>
       <div class="proof-item"><strong>$0</strong><span>to get your score</span></div>
       <div class="proof-div" aria-hidden="true"></div>
-      <div class="proof-item"><strong>Zero</strong><span>private account access needed</span></div>
+      <div class="proof-item"><strong>Zero</strong><span>account access needed</span></div>
       <div class="proof-div" aria-hidden="true"></div>
-      <div class="proof-item"><strong>Manual QA</strong><span>before every report is sent</span></div>
+      <div class="proof-item"><strong>Manual QA</strong><span>before every report</span></div>
     </div>
 
-    <!-- ============ LEAK FLOW ============ -->
-    <section class="section flow-section alt-bg" aria-labelledby="flow-heading">
-      <div class="section-hd">
-        <p class="eyebrow">Where revenue leaks happen</p>
-        <h2 id="flow-heading">Five places between "homeowner searches" and "booked job" where leads may slip away.</h2>
-        <p class="section-intro">Every gap below is detectable from public data — no access to your accounts required. This is what the free scan is looking for.</p>
+    <div class="trades-strip reveal" aria-label="Trades served">
+      <span class="ts-label">Serving businesses in</span>
+      <span class="ts-badge">HVAC</span>
+      <span class="ts-badge">Plumbing</span>
+      <span class="ts-badge">Roofing</span>
+      <span class="ts-badge">Electrical</span>
+      <span class="ts-badge">Contractors</span>
+      <span class="ts-badge">Med Spa</span>
+      <span class="ts-badge">Dental</span>
+    </div>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <div class="steps-strip alt-bg">
+      <div class="steps-inner reveal">
+        <div class="step-item">
+          <span class="step-num" aria-hidden="true">01</span>
+          <strong>Submit in 60 seconds</strong>
+          <p>Business name, website, city, and email. No credit card. No phone number.</p>
+        </div>
+        <div class="step-div" aria-hidden="true"></div>
+        <div class="step-item">
+          <span class="step-num" aria-hidden="true">02</span>
+          <strong>We check public signals</strong>
+          <p>AI search, mobile site, Google profile, missed-call setup. Public data only — no account access.</p>
+        </div>
+        <div class="step-div" aria-hidden="true"></div>
+        <div class="step-item">
+          <span class="step-num" aria-hidden="true">03</span>
+          <strong>Score in your inbox — 24 hrs</strong>
+          <p>Leak score, estimated range with formula shown, top 3 leaks, one fix. No call follows.</p>
+        </div>
       </div>
-      <div class="leak-flow reveal" role="list">
-
-        <div class="lf-node lf-start reveal" role="listitem">
-          <div class="lfn-icon lfn-ok" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-          </div>
-          <div class="lfn-text">
-            <span class="lfn-label">Homeowner needs help</span>
-            <span class="lfn-sub">AC fails on a 95° day. Pipe bursts. Estimate needed.</span>
-          </div>
-        </div>
-
-        <div class="lf-arrow" aria-hidden="true">→</div>
-
-        <div class="lf-node lf-leak reveal" role="listitem">
-          <div class="lfn-icon lfn-warn" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          </div>
-          <div class="lfn-text">
-            <span class="lfn-label">AI search result</span>
-            <span class="lfn-sub">ChatGPT names 3 competitors. Not you.</span>
-          </div>
-          <span class="leak-tag" aria-label="Leak point">Leak point</span>
-        </div>
-
-        <div class="lf-arrow" aria-hidden="true">→</div>
-
-        <div class="lf-node lf-leak reveal" role="listitem">
-          <div class="lfn-icon lfn-warn" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></svg>
-          </div>
-          <div class="lfn-text">
-            <span class="lfn-label">Website on mobile</span>
-            <span class="lfn-sub">No tap-to-call. Friction in an emergency.</span>
-          </div>
-          <span class="leak-tag" aria-label="Leak point">Leak point</span>
-        </div>
-
-        <div class="lf-arrow" aria-hidden="true">→</div>
-
-        <div class="lf-node lf-leak reveal" role="listitem">
-          <div class="lfn-icon lfn-warn" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 7.91"/><line x1="23" x2="1" y1="1" y2="23"/></svg>
-          </div>
-          <div class="lfn-text">
-            <span class="lfn-label">Call or form</span>
-            <span class="lfn-sub">Voicemail. No text-back. No auto-reply.</span>
-          </div>
-          <span class="leak-tag" aria-label="Leak point">Leak point</span>
-        </div>
-
-        <div class="lf-arrow" aria-hidden="true">→</div>
-
-        <div class="lf-node lf-leak reveal" role="listitem">
-          <div class="lfn-icon lfn-warn" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/></svg>
-          </div>
-          <div class="lfn-text">
-            <span class="lfn-label">Estimate sent</span>
-            <span class="lfn-sub">One touch. No follow-up. Prospect goes quiet.</span>
-          </div>
-          <span class="leak-tag" aria-label="Leak point">Leak point</span>
-        </div>
-
-        <div class="lf-arrow" aria-hidden="true">→</div>
-
-        <div class="lf-node lf-dest reveal" role="listitem">
-          <div class="lfn-icon lfn-dest" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
-          </div>
-          <div class="lfn-text">
-            <span class="lfn-label">Booked job</span>
-            <span class="lfn-sub">Revenue that should be yours.</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ============ INDUSTRY CARDS ============ -->
-    <section class="section trades-section" aria-labelledby="trades-heading">
-      <div class="section-hd">
-        <p class="eyebrow">Built for service businesses</p>
-        <h2 id="trades-heading">Built for businesses where one missed call is real money.</h2>
-        <p class="section-intro">HVAC, plumbing, and home service businesses have high-ticket jobs, urgent response windows, and leads who won't wait. The Revenue Leak Score is built for these dynamics.</p>
-      </div>
-      <div class="trades-grid">
-        <article class="trade-card reveal">
-          <div class="trade-icon trd-hvac" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2c-2 3-3.5 5-3.5 8a3.5 3.5 0 0 0 7 0c0-3-1.5-5-3.5-8z"/><path d="M12 13v9"/><path d="M9 18h6"/></svg>
-          </div>
-          <h3>HVAC</h3>
-          <p class="trade-desc">Emergency no-cool calls, seasonal replacement estimates, maintenance tune-ups, and after-hours urgent requests.</p>
-          <div class="trade-leak">
-            <span class="tl-label">Top leak risk</span>
-            <p>A homeowner's AC fails at 3pm on a Friday. They call while your tech is in an attic. Voicemail picks up. No text-back fires. They move to the next company before you see the missed call.</p>
-          </div>
-          <div class="trade-q">
-            <span class="tq-mark" aria-hidden="true">?</span>
-            <span>If a no-cool call hits voicemail right now, does anything follow up before the homeowner calls someone else?</span>
-          </div>
-        </article>
-
-        <article class="trade-card reveal">
-          <div class="trade-icon trd-plumb" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a3 3 0 0 0-3 3v7H6l-2 2v2h16v-2l-2-2h-3V5a3 3 0 0 0-3-3z"/><path d="M9 22h6"/></svg>
-          </div>
-          <h3>Plumbing</h3>
-          <p class="trade-desc">Burst pipes, water heater replacements, drain clogs, slab leaks, and same-day emergency calls.</p>
-          <div class="trade-leak">
-            <span class="tl-label">Top leak risk</span>
-            <p>A water heater lead fills out your contact form at 11pm. No auto-reply fires. They wake up, fill out three more forms, and hire whoever sends the first response email before 8am.</p>
-          </div>
-          <div class="trade-q">
-            <span class="tq-mark" aria-hidden="true">?</span>
-            <span>Does your contact form send an automatic reply within 2 minutes — including after hours?</span>
-          </div>
-        </article>
-
-        <article class="trade-card reveal">
-          <div class="trade-icon trd-roof" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
-          </div>
-          <h3>Roofing &amp; Contractors</h3>
-          <p class="trade-desc">Storm-season inspection requests, high-ticket replacement quotes, insurance jobs, and multi-week project estimates.</p>
-          <div class="trade-leak">
-            <span class="tl-label">Top leak risk</span>
-            <p>A $9,500 roofing estimate goes out once. No 3-day follow-up fires. No 7-day check-in. A competitor who follows up twice wins the job on follow-through alone.</p>
-          </div>
-          <div class="trade-q">
-            <span class="tq-mark" aria-hidden="true">?</span>
-            <span>Does a follow-up sequence fire for every estimate that does not book within 48 hours?</span>
-          </div>
-        </article>
-      </div>
-    </section>
+    </div>
 
     <!-- ============ WHAT GETS CHECKED ============ -->
-    <section class="section alt-bg" id="checks" aria-labelledby="checks-heading">
+    <section class="section" id="checks" aria-labelledby="checks-heading">
       <div class="section-hd">
         <p class="eyebrow">What we check</p>
         <h2 id="checks-heading">Seven public signals — no account access required.</h2>
@@ -410,7 +277,7 @@
     </section>
 
     <!-- ============ SAMPLE REPORT ============ -->
-    <section class="section" id="sample" aria-labelledby="sample-heading">
+    <section class="section alt-bg" id="sample" aria-labelledby="sample-heading">
       <div class="section-hd">
         <p class="eyebrow">Sample report</p>
         <h2 id="sample-heading">Here is what lands in your inbox.</h2>
@@ -493,180 +360,6 @@
       </div>
     </section>
 
-    <!-- ============ FULL AUDIT EVIDENCE WALL ============ -->
-    <section class="section alt-bg evidence-section" aria-labelledby="evidence-heading">
-      <div class="section-hd">
-        <p class="eyebrow">Full audit deliverables</p>
-        <h2 id="evidence-heading">Screenshot evidence for every finding — not just observations.</h2>
-        <p class="section-intro">The full $299 audit delivers a PDF with screenshots and captions for each issue found. Not "we think you have a problem" — visual proof of exactly what a homeowner sees when they find you.</p>
-      </div>
-      <div class="evidence-grid">
-        <div class="ev-tile reveal">
-          <div class="ev-chrome" aria-hidden="true">
-            <span class="ev-dot"></span><span class="ev-dot"></span><span class="ev-dot"></span>
-            <span class="ev-url">chatgpt.com</span>
-          </div>
-          <div class="ev-content">
-            <div class="ev-icon ico-cyan">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-            </div>
-            <span class="ev-title">AI Search Result</span>
-            <p class="ev-desc">What ChatGPT or Perplexity shows when someone asks for help in your city. Competitors named — or not named. Screenshot dated and captioned.</p>
-          </div>
-          <div class="ev-label">📸 Full Audit includes this screenshot</div>
-        </div>
-
-        <div class="ev-tile reveal">
-          <div class="ev-chrome" aria-hidden="true">
-            <span class="ev-dot"></span><span class="ev-dot"></span><span class="ev-dot"></span>
-            <span class="ev-url">Your site on mobile</span>
-          </div>
-          <div class="ev-content">
-            <div class="ev-icon ico-red">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></svg>
-            </div>
-            <span class="ev-title">Mobile Homepage (First Screen)</span>
-            <p class="ev-desc">Exactly what a homeowner sees when they open your site on a phone. Is the phone number visible? Is there a tap-to-call button above the fold?</p>
-          </div>
-          <div class="ev-label">📸 Full Audit includes this screenshot</div>
-        </div>
-
-        <div class="ev-tile reveal">
-          <div class="ev-chrome" aria-hidden="true">
-            <span class="ev-dot"></span><span class="ev-dot"></span><span class="ev-dot"></span>
-            <span class="ev-url">google.com/maps</span>
-          </div>
-          <div class="ev-content">
-            <div class="ev-icon ico-amber">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <span class="ev-title">Google Business Profile</span>
-            <p class="ev-desc">Review recency, owner response rate, and GBP completeness. "Last review: 94 days ago." Visible to every homeowner who checks before calling.</p>
-          </div>
-          <div class="ev-label">📸 Full Audit includes this screenshot</div>
-        </div>
-
-        <div class="ev-tile reveal">
-          <div class="ev-chrome" aria-hidden="true">
-            <span class="ev-dot"></span><span class="ev-dot"></span><span class="ev-dot"></span>
-            <span class="ev-url">Form auto-reply test</span>
-          </div>
-          <div class="ev-content">
-            <div class="ev-icon ico-green">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            </div>
-            <span class="ev-title">Form Auto-Reply Test</span>
-            <p class="ev-desc">We submit a test form and check the inbox. Does an auto-reply arrive within 2 minutes? Or does the inbox stay quiet? Timed and captured.</p>
-          </div>
-          <div class="ev-label">📸 Full Audit includes this screenshot</div>
-        </div>
-
-        <div class="ev-tile reveal">
-          <div class="ev-chrome" aria-hidden="true">
-            <span class="ev-dot"></span><span class="ev-dot"></span><span class="ev-dot"></span>
-            <span class="ev-url">pagespeed.web.dev</span>
-          </div>
-          <div class="ev-content">
-            <div class="ev-icon ico-purple">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-            </div>
-            <span class="ev-title">Mobile Performance Score</span>
-            <p class="ev-desc">Google's public PageSpeed score for your site on mobile. A slow mobile site loses emergency service leads who won't wait for a page to load.</p>
-          </div>
-          <div class="ev-label">📸 Full Audit includes this screenshot</div>
-        </div>
-
-        <div class="ev-tile reveal">
-          <div class="ev-chrome" aria-hidden="true">
-            <span class="ev-dot"></span><span class="ev-dot"></span><span class="ev-dot"></span>
-            <span class="ev-url">google.com/search</span>
-          </div>
-          <div class="ev-content">
-            <div class="ev-icon ico-cyan">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            </div>
-            <span class="ev-title">Google Maps Ranking</span>
-            <p class="ev-desc">Where your business appears in local search results vs. competitors. Which businesses get the 3-pack visibility — and which don't appear at all.</p>
-          </div>
-          <div class="ev-label">📸 Full Audit includes this screenshot</div>
-        </div>
-      </div>
-      <p class="evidence-note reveal">Every screenshot in the full audit includes a caption explaining what it shows and why it matters. No raw screenshots without context.</p>
-    </section>
-
-    <!-- ============ AFTER YOU SUBMIT ============ -->
-    <section class="section submit-section" aria-labelledby="submit-heading">
-      <div class="section-hd">
-        <p class="eyebrow">What happens next</p>
-        <h2 id="submit-heading">Submit in 60 seconds. Score arrives in 24 hours. No call follows.</h2>
-      </div>
-      <div class="timeline reveal">
-        <div class="tl-step">
-          <div class="tl-num" aria-hidden="true">01</div>
-          <div class="tl-content">
-            <strong>You submit your business details</strong>
-            <p>Name, website, city, category, and email. About 60 seconds. No login, no credit card, no phone number.</p>
-          </div>
-        </div>
-        <div class="tl-connector" aria-hidden="true"></div>
-        <div class="tl-step">
-          <div class="tl-num" aria-hidden="true">02</div>
-          <div class="tl-content">
-            <strong>We check public signals manually</strong>
-            <p>AI search results, your mobile site, Google Business Profile, form flow, and missed-call setup — all from publicly visible data. Every scan is reviewed before sending.</p>
-          </div>
-        </div>
-        <div class="tl-connector" aria-hidden="true"></div>
-        <div class="tl-step">
-          <div class="tl-num" aria-hidden="true">03</div>
-          <div class="tl-content">
-            <strong>Your score arrives by email</strong>
-            <p>Revenue Leak Score, estimated leak range with the math shown, top 3 leaks, and one quick fix. Delivered within 24 hours. Plain English — no jargon, no dashboard login.</p>
-          </div>
-        </div>
-        <div class="tl-connector" aria-hidden="true"></div>
-        <div class="tl-step">
-          <div class="tl-num" aria-hidden="true">04</div>
-          <div class="tl-content">
-            <strong>If useful, you can go deeper</strong>
-            <p>The free scan covers the top 3 leaks. The $299 full audit covers all 7 with screenshot evidence, fix scripts, and a 30-day plan. Reply to the email — that's all. No sales call. No follow-up pitch if you say no.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ COMPARISON ============ -->
-    <section class="section alt-bg" aria-labelledby="compare-heading">
-      <div class="section-hd">
-        <p class="eyebrow">What makes this different</p>
-        <h2 id="compare-heading">Not a generic audit. Not a retainer pitch.</h2>
-      </div>
-      <div class="compare-grid">
-        <div class="compare-col col-them reveal">
-          <div class="compare-hd"><span class="compare-lbl lbl-bad">Generic agency audit</span></div>
-          <ul class="compare-list">
-            <li><span class="cx" aria-hidden="true">✗</span>Vague SEO checklist tied to traffic, not booked jobs</li>
-            <li><span class="cx" aria-hidden="true">✗</span>Sales call required before you see anything</li>
-            <li><span class="cx" aria-hidden="true">✗</span>Needs access to Analytics, ad accounts, CRM</li>
-            <li><span class="cx" aria-hidden="true">✗</span>Results in 2–4 weeks</li>
-            <li><span class="cx" aria-hidden="true">✗</span>Ends with a $1,500–$5,000/mo retainer pitch</li>
-            <li><span class="cx" aria-hidden="true">✗</span>Generic findings not tied to your missed calls</li>
-          </ul>
-        </div>
-        <div class="compare-col col-us reveal">
-          <div class="compare-hd"><span class="compare-lbl lbl-good">Revenue Leak Score</span></div>
-          <ul class="compare-list">
-            <li><span class="ck" aria-hidden="true">✓</span>Score tied to where booked jobs may be slipping</li>
-            <li><span class="ck" aria-hidden="true">✓</span>Free scan first — no call, no pitch, no obligation</li>
-            <li><span class="ck" aria-hidden="true">✓</span>Public data only — no account access required</li>
-            <li><span class="ck" aria-hidden="true">✓</span>Delivered in 24 hours</li>
-            <li><span class="ck" aria-hidden="true">✓</span>$299 fixed audit — no long contract</li>
-            <li><span class="ck" aria-hidden="true">✓</span>Specific to your business, your city, your signals</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
     <!-- ============ PRICING ============ -->
     <section class="section pricing" id="pricing" aria-labelledby="pricing-heading">
       <div class="section-hd">
@@ -723,97 +416,8 @@
       </div>
     </section>
 
-    <!-- ============ TRUST SECTION ============ -->
-    <section class="section trust-section alt-bg" aria-labelledby="trust-heading">
-      <div class="section-hd">
-        <p class="eyebrow">How we keep the scan honest</p>
-        <h2 id="trust-heading">No dashboards. No private access. No manufactured scores.</h2>
-        <p class="section-intro">Local service business owners are skeptical of marketing pitches. Here is exactly how this works — and doesn't work.</p>
-      </div>
-      <div class="trust-grid">
-        <div class="trust-point reveal">
-          <div class="tp-icon ico-green" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          </div>
-          <strong>Public data only</strong>
-          <p>We check signals visible to anyone — your website, Google profile, AI search results. No login to your accounts. No access to analytics, call logs, or CRM.</p>
-        </div>
-        <div class="trust-point reveal">
-          <div class="tp-icon ico-cyan" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
-          </div>
-          <strong>Manual QA before every send</strong>
-          <p>Scans are reviewed by a person before delivery. If a finding looks wrong, it gets removed. You do not receive auto-generated output.</p>
-        </div>
-        <div class="trust-point reveal">
-          <div class="tp-icon ico-amber" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <strong>Estimates — not promises</strong>
-          <p>The revenue ranges are estimates with visible math. We show the formula. You can check it. We never say "you're losing $X/month" as a fact.</p>
-        </div>
-        <div class="trust-point reveal">
-          <div class="tp-icon ico-red" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" x2="9" y1="9" y2="15"/><line x1="9" x2="15" y1="9" y2="15"/></svg>
-          </div>
-          <strong>We omit what we cannot verify</strong>
-          <p>If a finding cannot be confirmed from public data, it is not included. We do not fill reports with unverified claims to make the score look worse.</p>
-        </div>
-        <div class="trust-point reveal">
-          <div class="tp-icon ico-purple" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
-          </div>
-          <strong>Screenshots with captions</strong>
-          <p>Every finding in the paid audit includes a dated screenshot and a written caption explaining exactly what it shows and why it matters to your business.</p>
-        </div>
-        <div class="trust-point reveal">
-          <div class="tp-icon ico-green" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 7.91"/></svg>
-          </div>
-          <strong>No sales call follows</strong>
-          <p>Submit the form. Receive the scan by email. Reply if you want to go deeper. No call from us unless you ask for one. Email only.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ WHO'S REVIEWING ============ -->
-    <section class="section founder-section" aria-labelledby="founder-heading">
-      <div class="founder-wrap reveal">
-        <div class="founder-avatar" aria-hidden="true">KM</div>
-        <div class="founder-copy">
-          <p class="eyebrow">Who's reviewing your scan</p>
-          <h2 id="founder-heading">A real person reviews every scan before it reaches you.</h2>
-          <p class="sublede">Every Revenue Leak Score is built and reviewed by Kenny Meyers — not outsourced, not auto-generated. If a signal can't be confirmed from public data, it doesn't go in the report.</p>
-          <ul class="founder-points">
-            <li><span class="fp-dot" aria-hidden="true"></span><span>Manual reviews built around HVAC, plumbing, roofing, and local-service buying behavior</span></li>
-            <li><span class="fp-dot" aria-hidden="true"></span><span>Every report passes QA before sending — no bulk auto-generation, ever</span></li>
-            <li><span class="fp-dot" aria-hidden="true"></span><span>Built because most "free audits" are retainer pitch funnels — this one isn't</span></li>
-            <li><span class="fp-dot" aria-hidden="true"></span><span>Reply to your scan email and it goes directly to Kenny — no support queue</span></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ GUARANTEE ============ -->
-    <section class="guar-strip" aria-label="Money-back guarantee">
-      <div class="guar-inner">
-        <div class="guar-icon" aria-hidden="true">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-        </div>
-        <p class="guar-text">If the full audit finds fewer than 3 actionable leaks, you get <strong>$100 back</strong>. No questions asked.</p>
-        <div class="guar-seal" aria-label="Money back guarantee seal">
-          <span class="gs-ring" aria-hidden="true"></span>
-          <div class="guar-seal-inner" aria-hidden="true">
-            <span>MONEY</span>
-            <span>BACK</span>
-            <span>GUARANTEE</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ============ FAQ ============ -->
-    <section class="section faq" id="faq" aria-labelledby="faq-heading">
+    <section class="section alt-bg faq" id="faq" aria-labelledby="faq-heading">
       <div class="section-hd">
         <p class="eyebrow">FAQ</p>
         <h2 id="faq-heading">Plain answers before you submit.</h2>
@@ -826,6 +430,14 @@
         <details>
           <summary>Do you need access to my accounts?</summary>
           <p>No. The free scan uses only publicly visible data — your website, Google Business Profile, and AI search results. The full audit adds manual verification using the same public signals, plus screenshots. We never ask for login credentials.</p>
+        </details>
+        <details>
+          <summary>What happens after I submit?</summary>
+          <p>You submit your business name, website, city, category, and email — takes about 60 seconds. We manually check your public signals within 24 hours and email your score. The report includes your leak score, estimated leak range with the math shown, top 3 leaks, and one quick fix per leak. No one will call you. No follow-up pitch. If you want to go deeper, just reply to the email.</p>
+        </details>
+        <details>
+          <summary>Who reviews my scan?</summary>
+          <p>Every Revenue Leak Score is built and reviewed by Kenny Meyers — not outsourced, not auto-generated. If a signal can't be confirmed from public data, it doesn't go in the report. Every report passes QA before sending. Reply to your scan email and it goes directly to Kenny — no support queue.</p>
         </details>
         <details>
           <summary>How are the estimated leak ranges calculated?</summary>
@@ -841,7 +453,7 @@
         </details>
         <details>
           <summary>How is this different from an SEO or marketing audit?</summary>
-          <p>A standard SEO audit focuses on traffic, keywords, and rankings. Revenue Leak Score focuses on where traffic that already arrives may fail to convert — missed calls, slow follow-up, weak mobile CTAs, stale reviews, and AI search gaps. Different problem, different lens.</p>
+          <p>A standard SEO audit focuses on traffic, keywords, and rankings. Revenue Leak Score focuses on where traffic that already arrives may fail to convert — missed calls, slow follow-up, weak mobile CTAs, stale reviews, and AI search gaps. Different problem, different lens. No retainer pitch at the end — the $299 full audit is a one-time flat fee.</p>
         </details>
       </div>
     </section>
@@ -936,6 +548,6 @@
     <a class="button primary" href="#scan">Get My Free Revenue Leak Score →</a>
   </div>
 
-  <script src="script.js?v=20260620c"></script>
+  <script src="script.js?v=20260620d"></script>
 </body>
 </html>
