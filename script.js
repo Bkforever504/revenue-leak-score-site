@@ -96,9 +96,47 @@ function initForm() {
   });
 }
 
+/* ---- Mobile nav toggle ---- */
+function initNav() {
+  const toggle = document.querySelector('#nav-toggle');
+  const nav = document.querySelector('#site-nav');
+  if (!toggle || !nav) return;
+
+  toggle.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!open));
+    nav.classList.toggle('nav-open', !open);
+  });
+
+  nav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      toggle.setAttribute('aria-expanded', 'false');
+      nav.classList.remove('nav-open');
+    });
+  });
+
+  document.addEventListener('click', e => {
+    if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+      toggle.setAttribute('aria-expanded', 'false');
+      nav.classList.remove('nav-open');
+    }
+  });
+}
+
+/* ---- Sticky mobile CTA visibility ---- */
+function initStickyCTA() {
+  const cta = document.querySelector('.mobile-cta');
+  const form = document.querySelector('#scan');
+  if (!cta || !form) return;
+  const obs = new IntersectionObserver(entries => {
+    cta.classList.toggle('hidden', entries[0].isIntersecting);
+  }, { threshold: 0.15 });
+  obs.observe(form);
+}
+
 /* ---- Init ---- */
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => { initHero(); initReveal(); initForm(); });
+  document.addEventListener('DOMContentLoaded', () => { initHero(); initReveal(); initForm(); initNav(); initStickyCTA(); });
 } else {
-  initHero(); initReveal(); initForm();
+  initHero(); initReveal(); initForm(); initNav(); initStickyCTA();
 }

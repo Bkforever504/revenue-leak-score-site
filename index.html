@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260619h">
+  <link rel="stylesheet" href="styles.css?v=20260620a">
 </head>
 <body>
 
@@ -26,13 +26,16 @@
       <span class="brand-dot" aria-hidden="true"></span>
       Revenue Leak Score
     </a>
-    <nav aria-label="Primary">
+    <nav id="site-nav" aria-label="Primary">
       <a href="#checks">What We Check</a>
       <a href="#sample">Sample</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
       <a class="nav-cta" href="#scan">Get Free Score</a>
     </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span><span></span>
+    </button>
   </header>
 
   <main id="top">
@@ -841,6 +844,10 @@
     <p class="footer-legal">Revenue Leak Score estimates potential revenue leakage based on visible public conversion signals and conservative assumptions. Results are estimates, not guarantees. Actual outcomes depend on traffic volume, market conditions, response quality, pricing, and follow-through. This is a marketing and operations audit, not a financial advisory.</p>
   </footer>
 
-  <script src="script.js?v=20260619h"></script>
+  <div class="mobile-cta" aria-hidden="true">
+    <a class="button primary" href="#scan">Get My Free Revenue Leak Score →</a>
+  </div>
+
+  <script src="script.js?v=20260620a"></script>
 </body>
 </html>
