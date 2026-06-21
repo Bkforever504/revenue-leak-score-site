@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260620h">
+  <link rel="stylesheet" href="styles.css?v=20260620i">
   <script defer data-domain="revenue-leak-score.onrender.com" src="https://plausible.io/js/script.js"></script>
   <script type="application/ld+json">
   {
@@ -43,6 +43,18 @@
         "name": "Full Revenue Leak Audit",
         "price": "299",
         "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Monthly Revenue Leak Monitoring",
+        "price": "199",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "199",
+          "priceCurrency": "USD",
+          "billingDuration": "P1M"
+        }
       }
     ]
   }
@@ -366,7 +378,7 @@
       <div class="section-hd">
         <p class="eyebrow">Pricing</p>
         <h2 id="pricing-heading">One recovered job or booked customer typically covers the full audit cost.</h2>
-        <p class="section-intro">Start free. If your scan shows enough opportunity, reply to upgrade. The full audit is a fixed price — no contract, no recurring fees, no follow-on retainer unless you ask for one.</p>
+        <p class="section-intro">Start free. Upgrade to the fixed-price audit when you want the full picture. Monthly monitoring is optional after the audit — no long contract, no pressure.</p>
       </div>
       <div class="price-grid">
         <article class="price-card reveal">
@@ -398,23 +410,24 @@
             <li>PDF audit delivered in 48 hours</li>
           </ul>
           <a class="button primary" href="#scan" style="width:100%;justify-content:center">Start with the free score →</a>
+          <!-- STRIPE_PAYMENT_LINK: replace mailto href below with your Stripe Payment Link URL once created -->
           <a class="button secondary price-direct" href="mailto:kennethanthonymeyers@yahoo.com?subject=Full%20Revenue%20Leak%20Audit%20invoice%20request&body=Hi%20Kenny%2C%0A%0AI%27d%20like%20to%20order%20the%20full%20%24299%20Revenue%20Leak%20Audit.%20Please%20send%20the%20payment%20link.%0A%0ABusiness%20name%3A%0AWebsite%3A%0ACity%2Fstate%3A%0ABusiness%20category%3A%0A%0AI%20understand%20the%20audit%20starts%20after%20payment%20is%20confirmed.">Request $299 audit invoice →</a>
           <div class="price-guar">If your full audit includes fewer than 3 verified, actionable findings — $100 back. Audit starts after payment is confirmed.</div>
         </article>
         <article class="price-card reveal">
-          <div class="price-tier">Repair Setup</div>
-          <div class="price-num">$499+</div>
-          <div class="price-for">Best for: owners who want priority leaks plugged after the audit scope is approved.</div>
+          <div class="price-tier">Monthly Monitoring</div>
+          <div class="price-num">$199<span class="price-mo">/mo</span></div>
+          <div class="price-for">Best for: owners who want the leaks from their audit caught before they compound — without managing it themselves.</div>
           <ul class="price-feats">
-            <li>Written scope based on your audit findings</li>
-            <li>Simple missed-call text-back setup</li>
-            <li>Basic quote follow-up sequence</li>
-            <li>Review request system setup</li>
-            <li>Email-first setup — no sales calls</li>
-            <li>Software fees and paid tools not included</li>
-            <li>Custom CRM/API work quoted separately</li>
+            <li>Monthly re-scan of all 7 public signals</li>
+            <li>Score trend report delivered each month</li>
+            <li>Top 3 priority actions for that month</li>
+            <li>Reply-to-email support — no calls required</li>
+            <li>No long contract — cancel anytime</li>
           </ul>
-          <a class="button secondary" href="#scan" style="width:100%;justify-content:center">Start with free score →</a>
+          <!-- STRIPE_MONITORING_LINK: replace mailto href below with your Stripe recurring payment link -->
+          <a class="button secondary price-direct" href="mailto:kennethanthonymeyers@yahoo.com?subject=Revenue%20Leak%20Monitoring%20-%20Setup%20Request&body=Hi%20Kenny%2C%0A%0AI%27d%20like%20to%20set%20up%20monthly%20Revenue%20Leak%20Monitoring.%20Please%20send%20the%20payment%20link.%0A%0ABusiness%20name%3A%0AWebsite%3A%0ACity%2Fstate%3A%0A%0AI%20understand%20monitoring%20starts%20after%20my%20audit%20is%20delivered.">Request monitoring setup →</a>
+          <div class="price-guar">Available to full-audit clients. No long contract. Cancel anytime.</div>
         </article>
       </div>
     </section>
@@ -457,6 +470,10 @@
         <details>
           <summary>How is this different from an SEO or marketing audit?</summary>
           <p>A standard SEO audit focuses on traffic, keywords, and rankings. Revenue Leak Score focuses on where traffic that already arrives may fail to convert — missed calls, slow follow-up, weak mobile CTAs, stale reviews, and AI search gaps. Different problem, different lens. No retainer pitch at the end — the $299 full audit is a one-time flat fee.</p>
+        </details>
+        <details>
+          <summary>What is the monthly monitoring and do I need it?</summary>
+          <p>Monthly monitoring is an optional add-on available after your full audit is delivered. Each month Kenny re-checks your 7 public signals, sends a short score-trend report, and flags the top 3 actions for that month. It is designed to catch scores that drift backward after initial fixes — a stale review profile, a removed tap-to-call button, a new competitor showing up in AI search. $199/mo, no long contract, cancel anytime. You do not need it to get value from the audit — it is there if you want the leaks caught before they compound again.</p>
         </details>
       </div>
     </section>
@@ -549,6 +566,6 @@
     <a class="button primary" href="#scan">Get My Free Revenue Leak Score →</a>
   </div>
 
-  <script src="script.js?v=20260620h"></script>
+  <script src="script.js?v=20260620i"></script>
 </body>
 </html>
