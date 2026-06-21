@@ -72,7 +72,7 @@ function initForm() {
       return;
     }
     const d = new FormData(form);
-    if (d.get('_honey')) return;
+    if (d.get('_gotcha')) return;
     const business = d.get('business') || '';
     const name     = d.get('name')     || '';
     const url      = d.get('url')      || '';
@@ -117,9 +117,7 @@ function initForm() {
       });
       if (!res.ok) throw new Error(`Form endpoint returned ${res.status}`);
       const data = await res.json().catch(() => ({}));
-      if (isFormSubmit && data.success !== 'true' && data.success !== true) {
-        throw new Error(data.message || 'Submission failed');
-      }
+      if (data.ok !== true) throw new Error(data.error || data.message || 'Submission failed');
       form.classList.add('is-submitted');
       Array.from(form.elements).forEach(el => {
         if (!el.closest?.('.form-success')) el.disabled = true;
