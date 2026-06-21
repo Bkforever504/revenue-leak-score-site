@@ -4,6 +4,10 @@ document.documentElement.classList.add('js');
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+function trackEvent(name) {
+  if (window.plausible && name) window.plausible(name);
+}
+
 /* ---- Hero panel animation ---- */
 function initHero() {
   if (prefersReducedMotion) {
@@ -125,6 +129,7 @@ function initForm() {
       if (message) message.textContent = '';
       if (submit) submit.textContent = 'Request Sent';
       if (success) success.hidden = false;
+      trackEvent('free_scan_submit_success');
     } catch (err) {
       let copied = false;
       if (navigator.clipboard?.writeText) {
@@ -142,7 +147,14 @@ function initForm() {
         submit.disabled = false;
         submit.textContent = 'Try Sending Again';
       }
+      trackEvent('free_scan_submit_failure');
     }
+  });
+}
+
+function initAnalytics() {
+  document.querySelectorAll('[data-event]').forEach(el => {
+    el.addEventListener('click', () => trackEvent(el.dataset.event));
   });
 }
 
@@ -233,7 +245,7 @@ function initStickyCTA() {
 
 /* ---- Init ---- */
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => { initHero(); initReveal(); initForm(); initNav(); initStickyCTA(); initCountUp(); initScanFocus(); });
+  document.addEventListener('DOMContentLoaded', () => { initHero(); initReveal(); initForm(); initNav(); initStickyCTA(); initCountUp(); initScanFocus(); initAnalytics(); });
 } else {
-  initHero(); initReveal(); initForm(); initNav(); initStickyCTA(); initCountUp(); initScanFocus();
+  initHero(); initReveal(); initForm(); initNav(); initStickyCTA(); initCountUp(); initScanFocus(); initAnalytics();
 }

@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260620i">
+  <link rel="stylesheet" href="styles.css?v=20260620j">
   <script defer data-domain="revenue-leak-score.onrender.com" src="https://plausible.io/js/script.js"></script>
   <script type="application/ld+json">
   {
@@ -42,13 +42,15 @@
         "@type": "Offer",
         "name": "Full Revenue Leak Audit",
         "price": "299",
-        "priceCurrency": "USD"
+        "priceCurrency": "USD",
+        "url": "https://buy.stripe.com/28E4gBfFJ1ekaQx6NEdIA0o"
       },
       {
         "@type": "Offer",
         "name": "Monthly Revenue Leak Monitoring",
         "price": "199",
         "priceCurrency": "USD",
+        "url": "https://buy.stripe.com/4gM6oJctxcX26Ah2xodIA0p",
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
           "price": "199",
@@ -72,7 +74,7 @@
       <a href="#sample">Sample</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
-      <a class="nav-cta" href="#scan">Get Free Score</a>
+      <a class="nav-cta" href="#scan" data-event="free_scan_cta_click">Get Free Score</a>
     </nav>
     <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
       <span></span><span></span><span></span>
@@ -94,7 +96,7 @@
           <li><span class="chip-check" aria-hidden="true">✓</span> No credit card</li>
         </ul>
         <div class="hero-actions">
-          <a class="button primary" href="#scan">Get My Free Revenue Leak Score →</a>
+          <a class="button primary" href="#scan" data-event="free_scan_cta_click">Get My Free Revenue Leak Score →</a>
           <a class="button secondary" href="#sample">See a sample report</a>
         </div>
       </div>
@@ -368,7 +370,7 @@
             <li><span class="fl-plus" aria-hidden="true">+</span>One follow-up Q&amp;A by email</li>
             <li><span class="fl-plus" aria-hidden="true">+</span>PDF delivered in 48 hours</li>
           </ul>
-          <a class="button primary" href="#scan" style="margin-top:28px;width:100%;justify-content:center">Get my free score →</a>
+          <a class="button primary" href="#scan" style="margin-top:28px;width:100%;justify-content:center" data-event="free_scan_cta_click">Get my free score →</a>
         </div>
       </div>
     </section>
@@ -392,7 +394,7 @@
             <li>One quick fix per leak</li>
             <li>AI search prompt list for your city</li>
           </ul>
-          <a class="button primary" href="#scan" style="width:100%;justify-content:center">Get free score →</a>
+          <a class="button primary" href="#scan" style="width:100%;justify-content:center" data-event="free_scan_cta_click">Get free score →</a>
         </article>
         <article class="price-card price-featured reveal">
           <div class="feat-badge">Most popular</div>
@@ -409,9 +411,8 @@
             <li>One follow-up Q&amp;A by email</li>
             <li>PDF audit delivered in 48 hours</li>
           </ul>
-          <a class="button primary" href="#scan" style="width:100%;justify-content:center">Start with the free score →</a>
-          <!-- STRIPE_PAYMENT_LINK: replace mailto href below with your Stripe Payment Link URL once created -->
-          <a class="button secondary price-direct" href="mailto:kennethanthonymeyers@yahoo.com?subject=Full%20Revenue%20Leak%20Audit%20invoice%20request&body=Hi%20Kenny%2C%0A%0AI%27d%20like%20to%20order%20the%20full%20%24299%20Revenue%20Leak%20Audit.%20Please%20send%20the%20payment%20link.%0A%0ABusiness%20name%3A%0AWebsite%3A%0ACity%2Fstate%3A%0ABusiness%20category%3A%0A%0AI%20understand%20the%20audit%20starts%20after%20payment%20is%20confirmed.">Request $299 audit invoice →</a>
+          <a class="button primary price-direct" href="https://buy.stripe.com/28E4gBfFJ1ekaQx6NEdIA0o" target="_blank" rel="noopener" data-event="paid_audit_checkout_click">Start full audit — $299</a>
+          <a class="button secondary price-direct" href="#scan" data-event="free_scan_cta_click">Prefer to start free? Get your score first</a>
           <div class="price-guar">If your full audit includes fewer than 3 verified, actionable findings — $100 back. Audit starts after payment is confirmed.</div>
         </article>
         <article class="price-card reveal">
@@ -425,9 +426,8 @@
             <li>Reply-to-email support — no calls required</li>
             <li>No long contract — cancel anytime</li>
           </ul>
-          <!-- STRIPE_MONITORING_LINK: replace mailto href below with your Stripe recurring payment link -->
-          <a class="button secondary price-direct" href="mailto:kennethanthonymeyers@yahoo.com?subject=Revenue%20Leak%20Monitoring%20-%20Setup%20Request&body=Hi%20Kenny%2C%0A%0AI%27d%20like%20to%20set%20up%20monthly%20Revenue%20Leak%20Monitoring.%20Please%20send%20the%20payment%20link.%0A%0ABusiness%20name%3A%0AWebsite%3A%0ACity%2Fstate%3A%0A%0AI%20understand%20monitoring%20starts%20after%20my%20audit%20is%20delivered.">Request monitoring setup →</a>
-          <div class="price-guar">Available to full-audit clients. No long contract. Cancel anytime.</div>
+          <a class="button secondary price-direct" href="https://buy.stripe.com/4gM6oJctxcX26Ah2xodIA0p" target="_blank" rel="noopener" data-event="monitoring_checkout_click">Start monitoring — $199/mo</a>
+          <div class="price-guar">Best after your full audit is delivered. No long contract. Cancel anytime.</div>
         </article>
       </div>
     </section>
@@ -556,16 +556,16 @@
         <a href="#sample">Sample</a>
         <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
-        <a href="#scan">Get Free Score</a>
+        <a href="#scan" data-event="free_scan_cta_click">Get Free Score</a>
       </nav>
     </div>
     <p class="footer-legal">Revenue Leak Score estimates potential revenue leakage based on visible public conversion signals and conservative assumptions. Results are estimates, not guarantees. Actual outcomes depend on traffic volume, market conditions, response quality, pricing, and follow-through. This is a marketing and operations audit, not a financial advisory.</p>
   </footer>
 
   <div class="mobile-cta" aria-hidden="true">
-    <a class="button primary" href="#scan">Get My Free Revenue Leak Score →</a>
+    <a class="button primary" href="#scan" data-event="free_scan_cta_click">Get My Free Revenue Leak Score →</a>
   </div>
 
-  <script src="script.js?v=20260620i"></script>
+  <script src="script.js?v=20260620j"></script>
 </body>
 </html>
