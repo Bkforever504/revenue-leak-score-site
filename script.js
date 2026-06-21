@@ -3,9 +3,25 @@
 document.documentElement.classList.add('js');
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const zapierLeadHook = 'https://hooks.zapier.com/hooks/catch/28010576/42ocirc/';
 
 function trackEvent(name) {
   if (window.plausible && name) window.plausible(name);
+}
+
+function sendLeadToZapier(payload) {
+  if (!zapierLeadHook) return;
+  const body = JSON.stringify(payload);
+  if (navigator.sendBeacon) {
+    const blob = new Blob([body], { type: 'application/json' });
+    if (navigator.sendBeacon(zapierLeadHook, blob)) return;
+  }
+  fetch(zapierLeadHook, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+    body
+  }).catch(() => {});
 }
 
 /* ---- Hero panel animation ---- */
@@ -129,6 +145,20 @@ function initForm() {
       if (message) message.textContent = '';
       if (submit) submit.textContent = 'Request Sent';
       if (success) success.hidden = false;
+      sendLeadToZapier({
+        submitted_at: new Date().toISOString(),
+        business,
+        owner_name: name,
+        email,
+        website: url,
+        city,
+        category,
+        gbp_url: gbp,
+        status: 'Free Scan Requested',
+        paid_audit_payment_status: 'Unpaid',
+        monitoring_status: 'Not Offered',
+        source: 'website_form'
+      });
       trackEvent('free_scan_submit_success');
     } catch (err) {
       let copied = false;
