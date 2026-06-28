@@ -47,13 +47,31 @@
       },
       {
         "@type": "Offer",
-        "name": "Monthly Revenue Leak Monitoring",
+        "name": "Score Watch Launch Plan",
         "price": "199",
         "priceCurrency": "USD",
         "url": "https://buy.stripe.com/4gM6oJctxcX26Ah2xodIA0p",
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
           "price": "199",
+          "priceCurrency": "USD",
+          "billingDuration": "P1M"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Revenue Guard Setup",
+        "price": "997",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Full Revenue Guard Monitoring",
+        "price": "497",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "497",
           "priceCurrency": "USD",
           "billingDuration": "P1M"
         }
@@ -296,7 +314,7 @@
       <div class="section-hd">
         <p class="eyebrow">Sample report</p>
         <h2 id="sample-heading">Here is what lands in your inbox.</h2>
-        <p class="section-intro">Plain-English email. Score, estimated leak range, top 3 leaks, and one action to take today. Every report is manually reviewed before sending — no auto-generated output.</p>
+        <p class="section-intro">Plain-English email. Score, estimated leak range, the biggest leak found, and one action to take today. Every report is manually reviewed before sending — no auto-generated output.</p>
       </div>
       <div class="report-wrap">
         <div class="mock-email reveal">
@@ -354,7 +372,7 @@
           <div class="aside-rule"></div>
           <h3>The full $299 audit adds:</h3>
           <ul class="feat-list">
-            <li><span class="fl-plus" aria-hidden="true">+</span>All 7 categories — not just top 3</li>
+            <li><span class="fl-plus" aria-hidden="true">+</span>All 7 categories — not just the biggest teaser leak</li>
             <li><span class="fl-plus" aria-hidden="true">+</span>Screenshot evidence for every finding</li>
             <li><span class="fl-plus" aria-hidden="true">+</span>Fix priority list — high / medium / low</li>
             <li><span class="fl-plus" aria-hidden="true">+</span>Plug-and-play scripts for top 2–3 fixes</li>
@@ -372,7 +390,7 @@
       <div class="section-hd">
         <p class="eyebrow">Pricing</p>
         <h2 id="pricing-heading">One recovered job or booked customer typically covers the full audit cost.</h2>
-        <p class="section-intro">Start free. Upgrade to the fixed-price audit when you want the full picture. Monthly monitoring is optional after the audit — no long contract, no pressure.</p>
+        <p class="section-intro">Start free. Upgrade to the fixed-price audit when you want the full picture. Score Watch is the light monthly recheck; full Revenue Guard monitoring starts after setup.</p>
       </div>
       <div class="price-grid">
         <article class="price-card reveal">
@@ -408,25 +426,26 @@
           <div class="price-guar">If your full audit includes fewer than 3 verified, actionable findings — $100 back. Audit starts after payment is confirmed.</div>
         </article>
         <article class="price-card reveal">
-          <div class="price-tier">Monthly Monitoring</div>
+          <div class="price-tier">Score Watch Launch Plan</div>
           <div class="price-num">$199<span class="price-mo">/mo</span></div>
-          <div class="price-for">Best for: owners who want the leaks from their audit caught before they compound — without managing it themselves.</div>
+          <div class="price-for">Best for: owners who want a light monthly public-signal recheck after their audit, before moving into full Revenue Guard monitoring.</div>
           <ul class="price-feats">
             <li>Monthly re-scan of all 7 public signals</li>
             <li>Score trend report delivered each month</li>
             <li>Top 3 priority actions for that month</li>
             <li>Reply-to-email support — no calls required</li>
+            <li>Launch pricing for early customers</li>
             <li>No long contract — cancel anytime</li>
           </ul>
-          <a class="button secondary price-direct" href="https://buy.stripe.com/4gM6oJctxcX26Ah2xodIA0p" target="_blank" rel="noopener" data-event="monitoring_checkout_click">Start monitoring — $199/mo</a>
-          <div class="price-guar">Best after your full audit is delivered. No long contract. Cancel anytime.</div>
+          <a class="button secondary price-direct" href="https://buy.stripe.com/4gM6oJctxcX26Ah2xodIA0p" target="_blank" rel="noopener" data-event="monitoring_checkout_click">Start Score Watch — $199/mo</a>
+          <div class="price-guar">This is not full implementation or daily lead monitoring. It is a launch-priced monthly score recheck after your audit. No long contract.</div>
         </article>
       </div>
 
       <div class="setup-tier-banner reveal">
         <div>
           <h3>Revenue Guard Setup — get the leaks fixed, not just found.</h3>
-          <p>After your audit, Kenny patches the top 2–3 leaks for you: missed-call text-back, contact form auto-reply, Google review workflow, and a daily owner action queue. You get a working system, not a to-do list.</p>
+          <p>After your audit, Kenny patches the top 2–3 leaks for you: missed-call text-back, contact form auto-reply, Google review workflow, and a daily owner action queue. Full Revenue Guard monitoring starts at $497/mo after setup when you want ongoing alerts and owner summaries. You get a working system, not a to-do list.</p>
           <div class="setup-tier-includes">
             <span>Missed-call text-back</span>
             <span>Form + auto-reply</span>
@@ -451,7 +470,7 @@
       <div class="faq-grid">
         <details open>
           <summary>Is the free score really free?</summary>
-          <p>Yes. No credit card, no sales call, no obligation. The free scan is a short public-data report delivered by email. You get the score, top 3 leaks, and one quick fix — whether or not you ever buy anything.</p>
+          <p>Yes. No credit card, no sales call, no obligation. The free scan is a short public-data report delivered by email. You get the score, the biggest leak we found, and one quick fix — whether or not you ever buy anything.</p>
         </details>
         <details>
           <summary>Do you need access to my accounts?</summary>
@@ -483,7 +502,7 @@
         </details>
         <details>
           <summary>What is the monthly monitoring and do I need it?</summary>
-          <p>Monthly monitoring is an optional add-on available after your full audit is delivered. Each month Kenny re-checks your 7 public signals, sends a short score-trend report, and flags the top 3 actions for that month. It is designed to catch scores that drift backward after initial fixes — a stale review profile, a removed tap-to-call button, a new competitor showing up in AI search. $199/mo, no long contract, cancel anytime. You do not need it to get value from the audit — it is there if you want the leaks caught before they compound again.</p>
+          <p>The $199/mo Score Watch plan is a launch-priced public-signal recheck after your full audit. Each month Kenny re-checks your 7 public signals, sends a short score-trend report, and flags the top 3 actions for that month. Full Revenue Guard monitoring is deeper and starts at $497/mo after setup when you want ongoing alerts, owner summaries, and workflow monitoring. You do not need either plan to get value from the audit.</p>
         </details>
       </div>
     </section>
@@ -560,7 +579,7 @@
           <div id="form-success" class="form-success" hidden>
             <span class="success-mark" aria-hidden="true">✓</span>
             <strong>You're in. Score arrives within 24 hours.</strong>
-            <p>Kenny reviews every scan manually before sending. Your Revenue Leak Score, estimated leak range, and top 3 fixes will be in your inbox within 24 hours.</p>
+            <p>Kenny reviews every scan manually before sending. Your Revenue Leak Score, estimated leak range, biggest leak, and one fix will be in your inbox within 24 hours.</p>
             <p style="margin-top:8px;font-size:12px;color:var(--muted)">Want the full $299 audit? Just reply to Kenny's email when your score arrives — no call needed.</p>
           </div>
         </form>
