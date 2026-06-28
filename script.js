@@ -93,13 +93,15 @@ function initForm() {
     }
     const d = new FormData(form);
     if (d.get('_gotcha')) return;
-    const business = d.get('business') || '';
-    const name     = d.get('name')     || '';
-    const url      = d.get('url')      || '';
-    const city     = d.get('city')     || '';
-    const category = d.get('category') || '';
-    const email    = d.get('email')    || '';
-    const gbp      = d.get('gbp')      || '';
+    const business    = d.get('business')     || '';
+    const name        = d.get('name')         || '';
+    const url         = d.get('url')          || '';
+    const city        = d.get('city')         || '';
+    const category    = d.get('category')     || '';
+    const email       = d.get('email')        || '';
+    const biggest_pain = d.get('biggest_pain') || '';
+    const phone       = d.get('phone')        || '';
+    const gbp         = d.get('gbp')          || '';
 
     d.set('_subject', `Free Revenue Leak Scan request - ${business}`);
     d.set('_replyto', email);
@@ -109,13 +111,15 @@ function initForm() {
     const fallbackText = [
       'New Revenue Leak Score free scan request:',
       '',
-      `Business:  ${business}`,
-      `Name:      ${name}`,
-      `Website:   ${url}`,
-      `City:      ${city}`,
-      `Category:  ${category}`,
-      `Email:     ${email}`,
-      `GBP URL:   ${gbp || 'Not provided'}`,
+      `Business:      ${business}`,
+      `Name:          ${name}`,
+      `Website:       ${url}`,
+      `City:          ${city}`,
+      `Category:      ${category}`,
+      `Email:         ${email}`,
+      `Biggest pain:  ${biggest_pain || 'Not provided'}`,
+      `Phone:         ${phone || 'Not provided'}`,
+      `GBP URL:       ${gbp || 'Not provided'}`,
     ].join('\n');
 
     if (message) message.textContent = 'Sending your scan request...';
@@ -153,6 +157,8 @@ function initForm() {
         website: url,
         city,
         category,
+        biggest_pain,
+        phone,
         gbp_url: gbp,
         status: 'Free Scan Requested',
         paid_audit_payment_status: 'Unpaid',
